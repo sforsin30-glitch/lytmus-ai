@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-<head>
+<head><link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#101522">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#101522">
 <title>LYTMUS AI — NEET 2027</title>
@@ -11,6 +12,13 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1
 @media(max-width:760px){.app{padding:12px}.span-8,.span-6,.span-4,.span-3{grid-column:span 12}.formgrid.three,.formgrid.four{grid-template-columns:repeat(2,minmax(0,1fr))}.chapter{grid-template-columns:1fr 125px 30px}.big{font-size:26px}.panel{padding:14px}}
 </style></head>
 <body><div class="app">
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js");
+  });
+}
+  </script>
 <header class="top"><div class="brand"><div class="logo">L</div><div><h1>LYTMUS AI</h1><p>NEET UG 2027 · Personal preparation workspace</p></div></div><div class="top-actions"><button class="btn" id="themeBtn">☀️ Theme</button><button class="btn" id="exportBtn">Export backup</button><button class="btn" id="importBtn">Import backup</button><input id="importFile" type="file" accept="application/json" class="hide"></div></header>
 <nav class="tabs" id="tabs">
 <button class="tab active" data-tab="dashboard">Dashboard</button><button class="tab" data-tab="syllabus">Syllabus</button><button class="tab" data-tab="planner">Daily planner</button><button class="tab" data-tab="revision">Revision</button><button class="tab" data-tab="tests">Mock analysis</button><button class="tab" data-tab="mentor">AI Mentor</button><button class="tab" data-tab="settings">Settings</button>
